@@ -88,11 +88,8 @@ To run the matching backend for this project:
    pip install fastapi uvicorn sqlmodel psycopg2-binary python-dotenv
    ```
 
-4. Create/verify the `.env` file inside the `urlshortner` folder:
-   ```env
-   DATABASE_URL="postgresql://username:password@localhost:5432/url_shortener_db"
-   ALLOWED_ORIGINS="http://localhost:5173"
-   ```
+4. Create a `.env` file inside the `urlshortner` folder and configure the required environment variables (e.g., `DATABASE_URL` and `ALLOWED_ORIGINS`).
+
 
 5. Run the FastAPI development server:
    ```bash
