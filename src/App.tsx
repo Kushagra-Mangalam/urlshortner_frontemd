@@ -26,7 +26,7 @@ function App() {
     setCopied(false);
 
     try {
-      const backendUrl = import.meta.env.VITE_BACKEND_URL;
+      const backendUrl = import.meta.env.VITE_API_URL;
       const response = await axios.post<URLResponse>(`${backendUrl}/shorten`, {
         original_url: originalUrl
       });
