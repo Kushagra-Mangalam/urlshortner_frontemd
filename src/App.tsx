@@ -26,12 +26,13 @@ function App() {
     setCopied(false);
 
     try {
-      const response = await axios.post<URLResponse>('http://localhost:8000/shorten', {
+      const backendUrl = import.meta.env.VITE_BACKEND_URL || "http://localhost:8000";
+      const response = await axios.post<URLResponse>(`${backendUrl}/shorten`, {
         original_url: originalUrl
       });
 
       const generatedCode = response.data.short_code;
-      setShortenedUrl(`http://localhost:8000/${generatedCode}`);
+      setShortenedUrl(`${backendUrl}/${generatedCode}`);
       setOriginalUrl('');
     } catch (err) {
       console.error(err);
